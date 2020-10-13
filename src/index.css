@@ -4,13 +4,24 @@ body {
     background-repeat: no-repeat;
 }
 
+body {
+    padding: 0;
+    margin: 0;
+    color: white;
+    height: 100vh;
+}
+
 .vertical-center {
     display: flex;
     align-items: center;
 }
 
 article.card {
-    background-color: rgba(245, 245, 245, 0.05) !important;
+    background-color: rgba(25, 25, 25, 0.75) !important;
     margin-left: 5px;
     margin-right: 5px;
+}
+
+#root, #box {
+    height: 100%;
 }

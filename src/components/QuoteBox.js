@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { getRandomInt } from '../general-functions'
-// import { Container, Row, Col, Button } from 'react-bootstrap'
+import { Container, Row, Col, Button } from 'react-bootstrap'
 // import dict from '../../node_modules/japanese-json/kana.json'
 // import QuoteText from './QuoteText'
 // import QuoteAuthor from './QuoteAuthor'
@@ -87,26 +87,28 @@ const QuoteBox = () => {
     // const firstRandom =
 
     return (
-        <div>123</div>
-        // <main id="box" className="text-center vertical-center">
-        //     <Container fluid style={{ maxWidth: "700px" }}>
-        //         <Row>
-        //             <Col>
-        //             <article className="card">
-        //                 {/* <h1 lang="ja-jp">{dict[getRandomDictKey(dict)]["a"]["Seion"]["Hiragana"]}</h1> */}
-        //                 <h1 lang="ja-jp" className="p-5 m-5">{hieroglyph ? hieroglyph.kanji : "Загружается..."}</h1>
-        //                 <h2 className="p-5 m-5">{hieroglyph ? hieroglyph.heisig_en : "Загружается..."}</h2>
-        //                 {/* <blockquote>{quotes ? quotes[randomInt].text : "Fetching random quote ..."}</blockquote>
-        //     <div>{quotes ? quotes[randomInt].author : "Fetching random quote author ..."}</div>*/}
-        //                 <button className="btn btn-lg btn-dark" onClick={() => {
-        //                     window.location.reload()
-        //                 }}>Новый иероглиф</button>
-        //             </article>
-        //             </Col>
-        //         </Row>
-        //     </Container>
+        // <div>123</div>
+        <main id="box" className="text-center vertical-center text-white">
+            <Container fluid style={{ maxWidth: "500px" }}>
+                <Row>
+                    <Col>
+                    <article className="card">
+                        <div className="card-body">
+                        {/* <h1 lang="ja-jp">{dict[getRandomDictKey(dict)]["a"]["Seion"]["Hiragana"]}</h1> */}
+                        <h1 lang="ja-jp" className="p-1">{hieroglyph ? hieroglyph.kanji : "Загружается..."}</h1>
+                        <h2 className="p-1">{hieroglyph ? hieroglyph.heisig_en : "Загружается..."}</h2>
+                        {/* <blockquote>{quotes ? quotes[randomInt].text : "Fetching random quote ..."}</blockquote>
+            <div>{quotes ? quotes[randomInt].author : "Fetching random quote author ..."}</div>*/}
+                        <button className="mt-5 btn btn-lg btn-secondary" onClick={() => {
+                            window.location.reload()
+                        }}>Новый иероглиф</button>
+                        </div>
+                    </article>
+                    </Col>
+                </Row>
+            </Container>
 
-        // </main>
+        </main>
     )
 }
 
