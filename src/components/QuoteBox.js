@@ -89,19 +89,22 @@ const QuoteBox = () => {
     return (
         // <div>123</div>
         <main id="box" className="text-center vertical-center text-white">
-            <Container fluid style={{ maxWidth: "500px" }}>
+            <Container fluid style={{ maxWidth: "700px" }}>
                 <Row>
                     <Col>
                     <article className="card">
                         <div className="card-body">
                         {/* <h1 lang="ja-jp">{dict[getRandomDictKey(dict)]["a"]["Seion"]["Hiragana"]}</h1> */}
                         <h1 lang="ja-jp" className="p-1">{hieroglyph ? hieroglyph.kanji : "Загружается..."}</h1>
-                        <h2 className="p-1">{hieroglyph ? hieroglyph.heisig_en : "Загружается..."}</h2>
+                        <h2 id="hint" style={{opacity: "0"}} className="p-1">{hieroglyph ? hieroglyph.heisig_en : "Загружается..."}</h2>
                         {/* <blockquote>{quotes ? quotes[randomInt].text : "Fetching random quote ..."}</blockquote>
             <div>{quotes ? quotes[randomInt].author : "Fetching random quote author ..."}</div>*/}
+                        <button className="mt-5 btn btn-lg btn-secondary mr-2" onClick={() => {
+                            document.getElementById("hint").style.opacity = "1"
+                        }}>Подсказка?</button>
                         <button className="mt-5 btn btn-lg btn-secondary" onClick={() => {
                             window.location.reload()
-                        }}>Новый иероглиф</button>
+                        }}>Новый иероглиф?</button>
                         </div>
                     </article>
                     </Col>
