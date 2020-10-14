@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/japan-spirit/static/css/main.3d9588f1.chunk.css",
-    "main.js": "/japan-spirit/static/js/main.9d2c305b.chunk.js",
-    "main.js.map": "/japan-spirit/static/js/main.9d2c305b.chunk.js.map",
+    "main.js": "/japan-spirit/static/js/main.7e8dc936.chunk.js",
+    "main.js.map": "/japan-spirit/static/js/main.7e8dc936.chunk.js.map",
     "runtime-main.js": "/japan-spirit/static/js/runtime-main.5f2e53e0.js",
     "runtime-main.js.map": "/japan-spirit/static/js/runtime-main.5f2e53e0.js.map",
     "static/css/2.2a86faee.chunk.css": "/japan-spirit/static/css/2.2a86faee.chunk.css",
     "static/js/2.719f2b99.chunk.js": "/japan-spirit/static/js/2.719f2b99.chunk.js",
     "static/js/2.719f2b99.chunk.js.map": "/japan-spirit/static/js/2.719f2b99.chunk.js.map",
     "index.html": "/japan-spirit/index.html",
-    "precache-manifest.8835793b0bb72be5ba4512372a810851.js": "/japan-spirit/precache-manifest.8835793b0bb72be5ba4512372a810851.js",
+    "precache-manifest.bb7fef861775767247f7fd3c281a3f9f.js": "/japan-spirit/precache-manifest.bb7fef861775767247f7fd3c281a3f9f.js",
     "service-worker.js": "/japan-spirit/service-worker.js",
     "static/css/2.2a86faee.chunk.css.map": "/japan-spirit/static/css/2.2a86faee.chunk.css.map",
     "static/css/main.3d9588f1.chunk.css.map": "/japan-spirit/static/css/main.3d9588f1.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.2a86faee.chunk.css",
     "static/js/2.719f2b99.chunk.js",
     "static/css/main.3d9588f1.chunk.css",
-    "static/js/main.9d2c305b.chunk.js"
+    "static/js/main.7e8dc936.chunk.js"
   ]
 }
