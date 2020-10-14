@@ -72,7 +72,10 @@ const HieroglyphBox = () => {
                                 <button className="btn btn-lg btn-secondary btn-block mb-2" onClick={toggleHintOpacity}>Подсказка?</button>
                             </Col>
                             <Col>
-                                <button className="btn btn-lg btn-secondary btn-block mb-2" onClick={loadNewHieroglyphEntry, loadNewBackgroundImage}>Новый иероглиф?</button>
+                                <button className="btn btn-lg btn-secondary btn-block mb-2" onClick={() => {
+                                    loadNewHieroglyphEntry()
+                                    loadNewBackgroundImage()
+                                }}>Новый иероглиф?</button>
                             </Col>
                         </Row>
                     </div>
