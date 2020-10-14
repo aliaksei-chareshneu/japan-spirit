@@ -1,11 +1,9 @@
 import React from 'react'
-import QuoteBox from './QuoteBox'
+import HieroglyphBox from './HieroglyphBox'
 
 const App = () => {
     return (
-        
-            <QuoteBox />
-        
+        <HieroglyphBox />
     )
 }
 
