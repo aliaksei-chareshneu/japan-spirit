@@ -7,9 +7,12 @@ const HieroglyphBox = () => {
     const [hieroglyphEntry, setHieroglyphEntry] = useState(null)
     const [backgroundImageUrl, setBackgroundImageUrl] = useState(null)
 
-    const toggleHintOpacity = () => {
-        const hint = document.getElementById("hint")
-        hint.style.opacity === "1" ? hint.style.opacity = "0" : hint.style.opacity = "1"
+    const showHint = () => {
+        document.getElementById("hint").style.opacity = "1"
+    }
+
+    const hideHint = () => {
+        document.getElementById("hint").style.opacity = "0"
     }
 
     const loadNewHieroglyphEntry = () => {
@@ -63,19 +66,18 @@ const HieroglyphBox = () => {
                             <Col>
                                 <h1 lang="ja-jp" className="p-1 display-1">{hieroglyphEntry ? hieroglyphEntry.kanji : "..."}</h1>
                                 <h2 id="hint" style={{ opacity: "0" }} className="p-1 mb-5">{hieroglyphEntry ? hieroglyphEntry.heisig_en : "..."}</h2>
-                                {/* <blockquote>{quotes ? quotes[randomInt].text : "Fetching random quote ..."}</blockquote>
-                                <div>{quotes ? quotes[randomInt].author : "Fetching random quote author ..."}</div>*/}
                             </Col>
                         </Row>
                         <Row>
                             <Col>
-                                <button className="btn btn-lg btn-secondary btn-block mb-2" onClick={toggleHintOpacity}>Подсказка?</button>
+                                <button className="btn btn-lg btn-secondary btn-block mb-2" onClick={showHint}>Show hint</button>
                             </Col>
                             <Col>
                                 <button className="btn btn-lg btn-secondary btn-block mb-2" onClick={() => {
+                                    hideHint()
                                     loadNewHieroglyphEntry()
                                     loadNewBackgroundImage()
-                                }}>Новый иероглиф?</button>
+                                }}>Another hieroglyph</button>
                             </Col>
                         </Row>
                     </div>
