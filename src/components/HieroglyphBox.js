@@ -16,6 +16,8 @@ const HieroglyphBox = () => {
     }
 
     const loadNewHieroglyphEntry = () => {
+        document.getElementById("overlay").classList.remove("fadeout")
+        document.getElementById("overlay").classList.add("fadein")
         fetch("https://kanjiapi.dev/v1/kanji/grade-1")
             .then(r => r.json())
             .then(data => {
@@ -33,6 +35,10 @@ const HieroglyphBox = () => {
             .then(r => {
                 setBackgroundImageUrl(r.url)
                 console.log(r.url)
+            })
+            .then(() => {
+                document.getElementById("overlay").classList.remove("fadein")
+                document.getElementById("overlay").classList.add("fadeout")
             })
     }
 
@@ -58,6 +64,7 @@ const HieroglyphBox = () => {
 
     return (
         <main id="box" className="text-center vertical-center text-white" style={{backgroundImage: `url(${backgroundImageUrl})`}}>
+            <div id="overlay"></div>
             <Container fluid style={{ maxWidth: "600px" }}>
 
                 <article className="card">
