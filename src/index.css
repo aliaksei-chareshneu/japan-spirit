@@ -37,7 +37,7 @@ main {
 
 @keyframes fadein {
     0% {opacity: 0; z-index: 100}
-    100% {opacity: 1;}
+    100% {opacity: 1; z-index: 100}
 }
 
 @keyframes fadeout {
@@ -47,11 +47,11 @@ main {
 
 .fadein {
     animation-name: fadein;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
 }
 
 .fadeout {
     animation-name: fadeout;
-    animation-duration: 2s;
+    animation-duration: 1s;
 }

@@ -6,6 +6,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap'
 const HieroglyphBox = () => {
     const [hieroglyphEntry, setHieroglyphEntry] = useState(null)
     const [backgroundImageUrl, setBackgroundImageUrl] = useState(null)
+    const [tempHieroglyph, setTempHieroglyph] = useState(null)
 
     const showHint = () => {
         document.getElementById("hint").style.opacity = "1"
@@ -15,52 +16,77 @@ const HieroglyphBox = () => {
         document.getElementById("hint").style.opacity = "0"
     }
 
+    const fadeInAnimation = () => {
+        return new Promise((resolve) => {
+            const overlay = document.getElementById("overlay");
+            const onAnimationEndCallback = () => {
+                overlay.removeEventListener('animationend', onAnimationEndCallback);
+                resolve("Animation ended, callback function removed");
+            }
+
+            overlay.addEventListener('animationend', onAnimationEndCallback)
+            overlay.classList.remove("fadeout")
+            overlay.classList.add("fadein")
+        })
+    }
+
     const loadNewHieroglyphEntry = () => {
-        document.getElementById("overlay").classList.remove("fadeout")
-        document.getElementById("overlay").classList.add("fadein")
-        fetch("https://kanjiapi.dev/v1/kanji/grade-1")
-            .then(r => r.json())
-            .then(data => {
-                fetch("https://kanjiapi.dev/v1/kanji/" + data[getRandomInt(1, data.length)])
-                    .then(r => r.json())
-                    .then(data => {
-                        setHieroglyphEntry(data)
-                        console.log(data)
-                    })
-            })
+        return new Promise((resolve) => {
+            console.log("Hieroglyph is being fetched...")
+            fetch("https://kanjiapi.dev/v1/kanji/grade-1")
+                .then(r => r.json())
+                .then(data => {
+                    fetch("https://kanjiapi.dev/v1/kanji/" + data[getRandomInt(1, data.length)])
+                        .then(r => r.json())
+                        .then(data => {
+                            setTempHieroglyph(data)
+                            console.log(data)
+                            resolve("Hieroglyph fetched!")
+                        })
+                })
+        })
     }
 
     const loadNewBackgroundImage = () => {
-        fetch("https://source.unsplash.com/collection/1252289")
-            .then(r => {
-                setBackgroundImageUrl(r.url)
-                console.log(r.url)
-            })
-            .then(() => {
-                document.getElementById("overlay").classList.remove("fadein")
-                document.getElementById("overlay").classList.add("fadeout")
-            })
+        return new Promise((resolve) => {
+            console.log("Image is being fetched...")
+            fetch("https://source.unsplash.com/collection/1252289")
+                .then(r => {
+                    setHieroglyphEntry(tempHieroglyph)
+                    console.log(tempHieroglyph)
+                    setBackgroundImageUrl(r.url)
+                    console.log(r.url)
+                    resolve("Image fetched and set!")
+                })
+        }) 
+    }
+
+    const loadingWrapper = () => {
+        // return Promise.all or just Promise.all?
+        return Promise.all([fadeInAnimation(), loadNewHieroglyphEntry(), loadNewBackgroundImage()]).then((values) => {
+            console.log(values);
+            document.getElementById("overlay").classList.remove("fadein")
+            document.getElementById("overlay").classList.add("fadeout")
+        })
     }
 
     useEffect(() => {
-        loadNewHieroglyphEntry()
-        loadNewBackgroundImage()
+        loadingWrapper()
+
+        // loadNewHieroglyphEntry()
+        // loadNewBackgroundImage()
+
+        const overlay = document.getElementById("overlay")
+        overlay.onanimationstart = (e) => {
+            console.log(`Start of ${e.animationName} animation`)
+            // return new Promise(resolve => resolve(`Start of ${e.animationName} animation`))
+        }
+
+        overlay.onanimationend = (e) => {
+            // return new Promise(resolve => resolve(`End of ${e.animationName} animation`))
+            console.log(`End of ${e.animationName} animation`)
+        }
     }, [])
-
-    // useEffect(() => {
-    //     fetch("https://kanjiapi.dev/v1/kanji/grade-1")
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             const randomInt = getRandomInt(1, data.length)
-    //             fetch("https://kanjiapi.dev/v1/kanji/" + data[randomInt])
-    //                 .then(response => response.json())
-    //                 .then(data => {
-    //                     setHieroglyph(data)
-    //                     console.log(data)
-    //                 })
-    //         })
-    // }, [])
-
 
     return (
         <main id="box" className="text-center vertical-center text-white" style={{backgroundImage: `url(${backgroundImageUrl})`}}>
@@ -82,8 +108,9 @@ const HieroglyphBox = () => {
                             <Col>
                                 <button className="btn btn-lg btn-secondary btn-block mb-2" onClick={() => {
                                     hideHint()
-                                    loadNewHieroglyphEntry()
-                                    loadNewBackgroundImage()
+                                    loadingWrapper()
+                                    // loadNewHieroglyphEntry()
+                                    // loadNewBackgroundImage()
                                 }}>Another hieroglyph</button>
                             </Col>
                         </Row>
