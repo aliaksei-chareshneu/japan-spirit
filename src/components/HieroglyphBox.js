@@ -41,7 +41,7 @@ const HieroglyphBox = () => {
                         .then(data => {
                             setTempHieroglyph(data)
                             console.log(data)
-                            resolve("Hieroglyph fetched!")
+                            resolve(data)
                         })
                 })
         })
@@ -52,8 +52,6 @@ const HieroglyphBox = () => {
             console.log("Image is being fetched...")
             fetch("https://source.unsplash.com/collection/1252289")
                 .then(r => {
-                    setHieroglyphEntry(tempHieroglyph)
-                    console.log(tempHieroglyph)
                     setBackgroundImageUrl(r.url)
                     console.log(r.url)
                     resolve("Image fetched and set!")
@@ -65,6 +63,8 @@ const HieroglyphBox = () => {
         // return Promise.all or just Promise.all?
         return Promise.all([fadeInAnimation(), loadNewHieroglyphEntry(), loadNewBackgroundImage()]).then((values) => {
             console.log(values);
+            setHieroglyphEntry(values[1])
+            console.log(values[1])
             document.getElementById("overlay").classList.remove("fadein")
             document.getElementById("overlay").classList.add("fadeout")
         })

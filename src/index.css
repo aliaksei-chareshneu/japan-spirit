@@ -47,11 +47,11 @@ main {
 
 .fadein {
     animation-name: fadein;
-    animation-duration: 1s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
 }
 
 .fadeout {
     animation-name: fadeout;
-    animation-duration: 1s;
+    animation-duration: 2s;
 }
