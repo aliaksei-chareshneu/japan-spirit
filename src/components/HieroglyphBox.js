@@ -62,6 +62,7 @@ const HieroglyphBox = () => {
     const loadingWrapper = () => {
         // return Promise.all or just Promise.all?
         return Promise.all([fadeInAnimation(), loadNewHieroglyphEntry(), loadNewBackgroundImage()]).then((values) => {
+            hideHint()
             console.log(values);
             setHieroglyphEntry(values[1])
             console.log(values[1])
@@ -71,7 +72,15 @@ const HieroglyphBox = () => {
     }
 
     useEffect(() => {
-        loadingWrapper()
+        Promise.all([loadNewHieroglyphEntry(), loadNewBackgroundImage()]).then((values) => {
+            console.log(values)
+            setHieroglyphEntry(values[0])
+            console.log(values[0])
+            document.getElementById("overlay").classList.remove("fadein")
+            document.getElementById("overlay").classList.add("fadeout")
+        })
+
+        // loadingWrapper()
 
         // loadNewHieroglyphEntry()
         // loadNewBackgroundImage()
@@ -90,7 +99,7 @@ const HieroglyphBox = () => {
 
     return (
         <main id="box" className="text-center vertical-center text-white" style={{backgroundImage: `url(${backgroundImageUrl})`}}>
-            <div id="overlay"></div>
+            <div id="overlay" className="text-center display-2">Japan Spirit</div>
             <Container fluid style={{ maxWidth: "600px" }}>
 
                 <article className="card">
@@ -107,7 +116,6 @@ const HieroglyphBox = () => {
                             </Col>
                             <Col>
                                 <button className="btn btn-lg btn-secondary btn-block mb-2" onClick={() => {
-                                    hideHint()
                                     loadingWrapper()
                                     // loadNewHieroglyphEntry()
                                     // loadNewBackgroundImage()
