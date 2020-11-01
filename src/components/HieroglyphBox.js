@@ -106,7 +106,7 @@ const HieroglyphBox = () => {
     return (
         <main id="box" className="text-center vertical-center text-white" style={{backgroundImage: `url(${backgroundImageUrl})`}}>
             <div id="overlay" className="text-center display-2">Japan Spirit</div>
-            <Container fluid style={{ maxWidth: "600px" }}>
+            <Container fluid style={{ maxWidth: "700px" }}>
 
                 <article className="card">
                     <div className="card-body">
@@ -117,18 +117,19 @@ const HieroglyphBox = () => {
                             </Col>
                         </Row>
                         <Row>
-                            <Col>
+                            <Col sm={4}>
                                 <button className="btn btn-lg btn-secondary btn-block mb-2" onClick={showHint}>Show hint</button>
                             </Col>
-                            <Col>
+                            <Col sm={4}>
                                 <button className="btn btn-lg btn-secondary btn-block mb-2" onClick={() => {
                                     loadingWrapper()
                                     // loadNewHieroglyphEntry()
                                     // loadNewBackgroundImage()
                                 }}>New hieroglyph</button>
                             </Col>
-                            <Col>
-                                <MusicPlayer url={`${process.env.PUBLIC_URL}/calm.mp3`}/>
+                            <Col sm={4}>
+                                {/* <MusicPlayer url={`${process.env.PUBLIC_URL}/calm.mp3`}/> */}
+                                <MusicPlayer url="https://upload.wikimedia.org/wikipedia/commons/transcoded/a/a3/Kimi_ga_Yo_instrumental.ogg/Kimi_ga_Yo_instrumental.ogg.mp3" />
                             </Col>
                         </Row>
                     </div>

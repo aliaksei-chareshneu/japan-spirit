@@ -50,7 +50,7 @@ const MusicPlayer = (props) => {
     const [isPlaying, toggleIsPlaying] = useAudio(props.url)
 
     return (
-        <Button onClick={toggleIsPlaying} variant="secondary" size="lg" block>{isPlaying ? "Pause" : "Play"}</Button>
+        <Button onClick={toggleIsPlaying} variant="secondary" size="lg" block>{isPlaying ? "Pause music" : "Play music"}</Button>
     )
 }
 
