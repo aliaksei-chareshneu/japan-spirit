@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "407a132d2f53eac94eb7a6ea7ff8db16",
+    "revision": "9d908f5565f1100873f5e7c402e24a9a",
     "url": "/japan-spirit/index.html"
   },
   {
-    "revision": "b205b5caf83ddc880b7d",
+    "revision": "6665507e4fb2df9e2a58",
     "url": "/japan-spirit/static/css/2.2a86faee.chunk.css"
   },
   {
-    "revision": "79799bc977bfff1b9f0e",
+    "revision": "b863a5a76beeddc19c33",
     "url": "/japan-spirit/static/css/main.47962e5e.chunk.css"
   },
   {
-    "revision": "b205b5caf83ddc880b7d",
-    "url": "/japan-spirit/static/js/2.1a37c8f0.chunk.js"
+    "revision": "6665507e4fb2df9e2a58",
+    "url": "/japan-spirit/static/js/2.8e458bb2.chunk.js"
   },
   {
     "revision": "5ac48c47bb3912b14c2d8de4f56d5ae8",
-    "url": "/japan-spirit/static/js/2.1a37c8f0.chunk.js.LICENSE.txt"
+    "url": "/japan-spirit/static/js/2.8e458bb2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "79799bc977bfff1b9f0e",
-    "url": "/japan-spirit/static/js/main.105cf99a.chunk.js"
+    "revision": "b863a5a76beeddc19c33",
+    "url": "/japan-spirit/static/js/main.6331f5a2.chunk.js"
   },
   {
     "revision": "3853542d82439a699c41",
