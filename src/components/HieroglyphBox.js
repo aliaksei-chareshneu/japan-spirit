@@ -16,6 +16,10 @@ const HieroglyphBox = () => {
         document.getElementById("hint").style.opacity = "0"
     }
 
+    const blurButtons = () => {
+        [...document.querySelectorAll('button')].forEach(b => b.blur())
+    }
+
     const fadeInAnimation = () => {
         return new Promise((resolve) => {
             const overlay = document.getElementById("overlay");
@@ -63,6 +67,7 @@ const HieroglyphBox = () => {
         // return Promise.all or just Promise.all?
         return Promise.all([fadeInAnimation(), loadNewHieroglyphEntry(), loadNewBackgroundImage()]).then((values) => {
             hideHint()
+            blurButtons()
             console.log(values);
             setHieroglyphEntry(values[1])
             setBackgroundImageUrl(values[2])
@@ -75,7 +80,7 @@ const HieroglyphBox = () => {
         Promise.all([loadNewHieroglyphEntry(), loadNewBackgroundImage()]).then((values) => {
             console.log(values)
             setHieroglyphEntry(values[0])
-            console.log(values[0])
+            setBackgroundImageUrl(values[1])
             document.getElementById("overlay").classList.remove("fadein")
             document.getElementById("overlay").classList.add("fadeout")
         })
