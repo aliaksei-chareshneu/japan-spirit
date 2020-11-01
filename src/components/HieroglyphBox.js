@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { getRandomInt } from '../general-functions'
 import { Container, Row, Col, Button } from 'react-bootstrap'
+import MusicPlayer from './MusicPlayer'
 // import dict from '../../node_modules/japanese-json/kana.json'
 
 const HieroglyphBox = () => {
@@ -124,7 +125,10 @@ const HieroglyphBox = () => {
                                     loadingWrapper()
                                     // loadNewHieroglyphEntry()
                                     // loadNewBackgroundImage()
-                                }}>Another hieroglyph</button>
+                                }}>New hieroglyph</button>
+                            </Col>
+                            <Col>
+                                <MusicPlayer url=""/>
                             </Col>
                         </Row>
                     </div>
