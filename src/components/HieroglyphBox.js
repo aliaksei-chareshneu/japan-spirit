@@ -128,7 +128,7 @@ const HieroglyphBox = () => {
                                 }}>New hieroglyph</button>
                             </Col>
                             <Col>
-                                <MusicPlayer url=""/>
+                                <MusicPlayer url={`${process.env.PUBLIC_URL}/calm.mp3`}/>
                             </Col>
                         </Row>
                     </div>

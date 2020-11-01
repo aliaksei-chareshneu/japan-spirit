@@ -15,7 +15,7 @@ const useAudio = (url) => {
         if (isPlaying) {
             console.log(isPlaying)
             const playPromise = audio.play();
-
+            console.log(url)
             if (playPromise !== undefined) {
                 playPromise
                     .then(_ => {
@@ -27,6 +27,7 @@ const useAudio = (url) => {
                         // Auto-play was prevented
                         // Show paused UI.
                         console.log("playback prevented");
+                        console.log(error)
                     });
             }
         } else {
