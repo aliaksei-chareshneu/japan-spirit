@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/japan-spirit/static/css/main.8cd4378a.chunk.css",
+    "main.css": "/japan-spirit/static/css/main.47962e5e.chunk.css",
     "main.js": "/japan-spirit/static/js/main.105cf99a.chunk.js",
     "main.js.map": "/japan-spirit/static/js/main.105cf99a.chunk.js.map",
     "runtime-main.js": "/japan-spirit/static/js/runtime-main.5f2e53e0.js",
@@ -9,17 +9,17 @@
     "static/js/2.1a37c8f0.chunk.js": "/japan-spirit/static/js/2.1a37c8f0.chunk.js",
     "static/js/2.1a37c8f0.chunk.js.map": "/japan-spirit/static/js/2.1a37c8f0.chunk.js.map",
     "index.html": "/japan-spirit/index.html",
-    "precache-manifest.3c7a50befb2d5ced855f40fde0f99eb1.js": "/japan-spirit/precache-manifest.3c7a50befb2d5ced855f40fde0f99eb1.js",
+    "precache-manifest.3958451a19e0a149fef1195b108673e8.js": "/japan-spirit/precache-manifest.3958451a19e0a149fef1195b108673e8.js",
     "service-worker.js": "/japan-spirit/service-worker.js",
     "static/css/2.2a86faee.chunk.css.map": "/japan-spirit/static/css/2.2a86faee.chunk.css.map",
-    "static/css/main.8cd4378a.chunk.css.map": "/japan-spirit/static/css/main.8cd4378a.chunk.css.map",
+    "static/css/main.47962e5e.chunk.css.map": "/japan-spirit/static/css/main.47962e5e.chunk.css.map",
     "static/js/2.1a37c8f0.chunk.js.LICENSE.txt": "/japan-spirit/static/js/2.1a37c8f0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5f2e53e0.js",
     "static/css/2.2a86faee.chunk.css",
     "static/js/2.1a37c8f0.chunk.js",
-    "static/css/main.8cd4378a.chunk.css",
+    "static/css/main.47962e5e.chunk.css",
     "static/js/main.105cf99a.chunk.js"
   ]
 }
