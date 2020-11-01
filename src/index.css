@@ -29,7 +29,9 @@ main {
 #overlay {
     background-color: black;
     height: 100%;
-    width: 100%;
+    /* blank space at the top and bottom of div on real mobile device */
+    /* width: 100%; */
+    width: 100vh;
     position: absolute;
     z-index: 100;
     opacity: 1;
