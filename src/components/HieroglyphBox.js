@@ -6,7 +6,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap'
 const HieroglyphBox = () => {
     const [hieroglyphEntry, setHieroglyphEntry] = useState(null)
     const [backgroundImageUrl, setBackgroundImageUrl] = useState(null)
-    const [tempHieroglyph, setTempHieroglyph] = useState(null)
+    // const [tempHieroglyph, setTempHieroglyph] = useState(null)
 
     const showHint = () => {
         document.getElementById("hint").style.opacity = "1"
@@ -39,7 +39,7 @@ const HieroglyphBox = () => {
                     fetch("https://kanjiapi.dev/v1/kanji/" + data[getRandomInt(1, data.length)])
                         .then(r => r.json())
                         .then(data => {
-                            setTempHieroglyph(data)
+                            // setTempHieroglyph(data)
                             console.log(data)
                             resolve(data)
                         })
@@ -52,9 +52,9 @@ const HieroglyphBox = () => {
             console.log("Image is being fetched...")
             fetch("https://source.unsplash.com/collection/1252289")
                 .then(r => {
-                    setBackgroundImageUrl(r.url)
+                    // setBackgroundImageUrl(r.url)
                     console.log(r.url)
-                    resolve("Image fetched and set!")
+                    resolve(r.url)
                 })
         }) 
     }
@@ -65,7 +65,7 @@ const HieroglyphBox = () => {
             hideHint()
             console.log(values);
             setHieroglyphEntry(values[1])
-            console.log(values[1])
+            setBackgroundImageUrl(values[2])
             document.getElementById("overlay").classList.remove("fadein")
             document.getElementById("overlay").classList.add("fadeout")
         })
