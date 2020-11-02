@@ -8,7 +8,9 @@
 }
 
 .japan-spirit {
-    font-family: "Far East"
+    font-family: "Far East";
+    text-indent: -7rem;
+    padding-left: 3rem;
 }
 
 body {

@@ -104,8 +104,8 @@ const HieroglyphBox = () => {
     }, [])
 
     return (
-        <main id="box" className="text-center vertical-center text-white" style={{backgroundImage: `url(${backgroundImageUrl})`}}>
-            <div id="overlay" className="text-center display-2">Japan Spirit</div>
+        <main id="box" className="text-center center-all text-white" style={{backgroundImage: `url(${backgroundImageUrl})`}}>
+            <div id="overlay" className="text-center center-all japan-spirit display-4"><p>japan<br />   spirit</p></div>
             <Container fluid style={{ maxWidth: "700px" }}>
 
                 <article className="card">
