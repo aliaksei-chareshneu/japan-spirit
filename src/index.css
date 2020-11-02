@@ -1,3 +1,16 @@
+@font-face {
+    font-family: "Far East";
+    src: url('./fonts/fareast.ttf') format('embedded-opentype'), /* Internet Explorer */
+        url('./fonts/fareast.ttf') format('woff2'), /* Super Modern Browsers */
+        url('./fonts/fareast.ttf') format('woff'), /* Pretty Modern Browsers */
+        url('./fonts/fareast.ttf') format('truetype'), /* Safari, Android, iOS */
+        url('./fonts/fareast.ttf') format('svg'); /* Legacy iOS */
+}
+
+.japan-spirit {
+    font-family: "Far East"
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -5,9 +18,10 @@ body {
     height: 100vh;
 }
 
-.vertical-center {
+.center-all {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 article.card {
@@ -38,13 +52,25 @@ main {
 }
 
 @keyframes fadein {
-    0% {opacity: 0; z-index: 100}
-    100% {opacity: 1; z-index: 100}
+    0% {
+        opacity: 0;
+        z-index: 100
+    }
+    100% {
+        opacity: 1;
+        z-index: 100
+    }
 }
 
 @keyframes fadeout {
-    0% {opacity: 1; z-index: 100}
-    100% {opacity: 0; z-index: 0}
+    0% {
+        opacity: 1;
+        z-index: 100
+    }
+    100% {
+        opacity: 0;
+        z-index: 0
+    }
 }
 
 .fadein {
