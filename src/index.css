@@ -1,15 +1,16 @@
 @font-face {
     font-family: "Far East";
     src: url('./fonts/fareast.ttf') format('embedded-opentype'), /* Internet Explorer */
-        url('./fonts/fareast.ttf') format('woff2'), /* Super Modern Browsers */
-        url('./fonts/fareast.ttf') format('woff'), /* Pretty Modern Browsers */
-        url('./fonts/fareast.ttf') format('truetype'), /* Safari, Android, iOS */
-        url('./fonts/fareast.ttf') format('svg'); /* Legacy iOS */
+    url('./fonts/fareast.ttf') format('woff2'), /* Super Modern Browsers */
+    url('./fonts/fareast.ttf') format('woff'), /* Pretty Modern Browsers */
+    url('./fonts/fareast.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('./fonts/fareast.ttf') format('svg');
+    /* Legacy iOS */
 }
 
 .japan-spirit {
     font-family: "Far East";
-    text-indent: -7rem;
+    text-indent: -9rem;
     padding-left: 3rem;
 }
 
@@ -51,6 +52,16 @@ main {
     position: absolute;
     z-index: 100;
     opacity: 1;
+}
+
+.rising-sun {
+    position: absolute;
+    margin-right: 3rem;
+}
+
+.japan-spirit > p {
+    z-index: 1;
+    text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black;
 }
 
 @keyframes fadein {
