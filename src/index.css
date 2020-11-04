@@ -8,6 +8,10 @@
     /* Legacy iOS */
 }
 
+p {
+    margin: 0;
+}
+
 .japan-spirit {
     font-family: "Far East";
     text-indent: -9rem;
